@@ -6,4 +6,5 @@ import org.springframework.stereotype.Component;
 @Component
 public interface LivroService {
     LivroDto getLivro(Long idLivro);
+    LivroDto saveLivro(LivroDto livroDto);
 }

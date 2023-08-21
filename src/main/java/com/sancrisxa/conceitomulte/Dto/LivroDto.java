@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
 @Data
@@ -17,6 +18,7 @@ import java.util.List;
 @Component
 @AllArgsConstructor
 @NoArgsConstructor
+@XmlRootElement
 public class LivroDto {
 
     private Long id;

@@ -19,7 +19,7 @@ public class XmlServiceImpl implements XmlService {
 
             Marshaller marshaller = jaxbContext.createMarshaller();
 
-            File file = new File("src\\main\\resources\\LivroDto.xml");
+            File file = new File("src/main/resources/LivroDto.xml");
 
             marshaller.marshal(livroDto, file);
 

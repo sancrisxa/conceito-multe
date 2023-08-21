@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -29,7 +30,11 @@ public class LivroServiceImpl implements LivroService{
     @Override
     public LivroDto getLivro(Long idLivro) {
 
-        Livro livro = this.livroRepository.getById(idLivro);
+        Optional<Livro> livro = this.livroRepository.findById(idLivro);
+
+        if (!livro.isPresent()) {
+            throw new RuntimeException();
+        }
 
         LivroDto livroDto = this.modelMapper.map(livro, LivroDto.class);
 
@@ -47,5 +52,15 @@ public class LivroServiceImpl implements LivroService{
         livroDto.setCapitulos(capitulos);
 
         return livroDto;
+    }
+
+    public LivroDto saveLivro(LivroDto livroDto) {
+
+        Livro livro = this.modelMapper.map(livroDto, Livro.class);
+
+        Livro livroSaved = this.livroRepository.save(livro);
+
+        return this.modelMapper.map(livroSaved, LivroDto.class);
+
     }
 }
