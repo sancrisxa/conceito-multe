@@ -25,7 +25,7 @@ public class XmlController {
 
         LivroDto livro = this.livroService.getLivro(idLivro);
 
-        //this.xmlService.convertToXml(livro);
+        this.xmlService.convertToXml(livro);
 
         return ResponseEntity.ok(livro);
 
