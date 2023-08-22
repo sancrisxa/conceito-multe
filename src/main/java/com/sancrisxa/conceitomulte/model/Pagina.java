@@ -4,8 +4,8 @@ import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Data
-@Builder
+@Getter
+@Setter
 @Entity
 @Table(name = "paginas")
 @AllArgsConstructor

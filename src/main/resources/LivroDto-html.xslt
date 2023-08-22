@@ -5,13 +5,37 @@
         <xsl:for-each select="livroDto">
             <ul>
                 <li>
-                    <xsl:value-of select="autor"/>
+                    Autor do livro - <xsl:value-of select="autor"/>
                 </li>
                 <li>
-                    <xsl:value-of select="editora"/>
+                    Editora do livro - <xsl:value-of select="editora"/>
                 </li>
                 <li>
-                    <xsl:value-of select="titulo"/>
+                    Título do livro - <xsl:value-of select="titulo"/>
+                </li>
+                <li>
+                    <xsl:for-each select="capitulos">
+                        <ul>
+                            <li>
+                                Numero do Capitulo - <xsl:value-of select="numeroCapitulo"/>
+                            </li>
+                            <li>
+                                Titulo do capitulo - <xsl:value-of select="titulo"/>
+                            </li>
+                            <li>
+                                <xsl:for-each select="paginas">
+                                    <ul>
+                                        <li>
+                                            Conteudo da pagina - <xsl:value-of select="conteudo"/>
+                                        </li>
+                                        <li>
+                                            Numero da pagina - <xsl:value-of select="numeroPagina"/>
+                                        </li>
+                                    </ul>
+                                </xsl:for-each>
+                            </li>
+                        </ul>
+                    </xsl:for-each>
                 </li>
             </ul>
         </xsl:for-each>

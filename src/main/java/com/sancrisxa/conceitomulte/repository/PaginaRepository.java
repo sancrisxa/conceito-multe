@@ -11,7 +11,7 @@ import java.util.List;
 public interface PaginaRepository extends JpaRepository<Pagina, Long> {
 
     @Query(
-            value = "SELECT * FROM paginas p WHERE p.id_pagina = ?1",
+            value = "SELECT * FROM paginas p WHERE p.id_capitulo = ?1",
             nativeQuery = true)
     List<Pagina> findAllByIdCapitulo(Long idCapitulo);
 }
